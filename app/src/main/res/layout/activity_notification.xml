@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context="com.martinomburajr.concepts.notifications.NotificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/notificationActivity_simpleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple"
+            android:onClick="showSimple"/>
+
+        <Button
+            android:id="@+id/notificationActivity_simpleChannelsAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Channels and Alerts"
+            android:onClick="showSimpleChannelsAlerts"/>
+
+    <Button
+        android:id="@+id/notificationActivity_simpleChannelsAlertsStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Channels, Alerts and Style"
+        android:onClick="showSimpleNotificationWChannelWAlertsWStyle"/>
+
+    <Button
+        android:id="@+id/notificationActivity_notificationWIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Intent(Redirect to App)"
+        android:onClick="showNotificationWIntents"/>
+
+        <Button
+            android:id="@+id/notificationActivity_notificationWInboxStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="InboxStyle"
+            android:onClick="showNotificationWInbox"/>
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
+</ScrollView>
