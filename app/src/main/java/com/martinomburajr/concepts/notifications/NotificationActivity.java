@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.martinomburajr.concepts.R;
 
 public class NotificationActivity extends AppCompatActivity {
 
+    private static final String TAG = "NotificationActivity";
     Button mSimple, mSimpleChannelsAlerts,mSimpleChannelsAlertsStyle;
     NotificationTutorial notificationTutorial;
 
@@ -59,5 +61,13 @@ public class NotificationActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void showNotificationWInbox(View view){
         notificationTutorial.notificationWInboxStyle();
+    }
+
+    public void showNotificationWUpdate(View view) {
+        notificationTutorial.notificationWUpdate()
+                .take(3)
+                .subscribe(v -> {
+                    Log.e(TAG,String.valueOf(v));
+                });
     }
 }

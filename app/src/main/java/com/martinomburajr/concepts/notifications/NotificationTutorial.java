@@ -14,8 +14,12 @@ import android.support.v4.app.NotificationCompat;
 import com.martinomburajr.concepts.MainActivity;
 import com.martinomburajr.concepts.R;
 
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
+
 /**
- * Created by User on 11/2/2017.
+ * Created by Martin Ombura Jr. on 11/2/2017.
  */
 
 public class NotificationTutorial {
@@ -233,6 +237,30 @@ public class NotificationTutorial {
 
         notificationManager.notify(143, notification.build());
     }
+
+
+    public Observable<Integer> notificationWUpdate(){
+        final NotificationManager notificationManager = (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        int id = 1234;
+        int count = 0;
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(mContext)
+                .setSmallIcon(R.drawable.ic_menu_slideshow)
+                .setContentTitle("I will be updated")
+                .setContentText("I have been updated " + count + "times");
+
+        notificationManager.notify(1234, notification.build());
+
+        return Observable.interval(2000, TimeUnit.MILLISECONDS)
+                .map((time) -> {
+            NotificationCompat.Builder notification2 = new NotificationCompat.Builder(mContext)
+                        .setSmallIcon(R.drawable.ic_menu_slideshow)
+                        .setContentTitle("I will be updated")
+                        .setContentText("I have been updated " + time + "times");
+            notificationManager.notify(1234, notification2.build());
+            return 0;
+        });
+    }
+
 
     public void notificationWIntentsWActions(){
 

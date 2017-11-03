@@ -48,10 +48,11 @@
             android:onClick="showNotificationWInbox"/>
 
         <Button
-            android:id="@+id/button16"
+            android:id="@+id/notificationActivity_notificationWUpdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Update Notif. Every 2sec"
+            android:onClick="showNotificationWUpdate"/>
 
         <Button
             android:id="@+id/button11"
