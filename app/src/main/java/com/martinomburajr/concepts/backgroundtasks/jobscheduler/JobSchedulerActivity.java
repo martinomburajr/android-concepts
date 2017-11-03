@@ -20,4 +20,8 @@ public class JobSchedulerActivity extends AppCompatActivity {
     public void showNotificationEvery30s(View view) {
         JobSchedulerTutorial.scheduleNotificationEvery30s(this);
     }
+
+    public void showNotification30sAfterCharge(View view) {
+        JobSchedulerTutorial.scheduleNotificationOnPowerPluggedIn(this);
+    }
 }

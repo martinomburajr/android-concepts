@@ -7,6 +7,8 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import com.martinomburajr.concepts.backgroundtasks.jobscheduler.service.JobSchedulerOnChargedService;
+
 /**
  * Created by User on 11/3/2017.
  */
@@ -21,5 +23,16 @@ public class JobSchedulerTutorial {
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
         JobScheduler jobScheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         jobScheduler.schedule(builder.build());
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public static void scheduleNotificationOnPowerPluggedIn(Context context) {
+        int jobid = 4432;
+        ComponentName serviceComponent = new ComponentName(context, JobSchedulerOnChargedService.class);
+        JobInfo.Builder jobInfo = new JobInfo.Builder(jobid,serviceComponent);
+        jobInfo.setRequiresCharging(true);
+
+        JobScheduler jobScheduler = (JobScheduler)context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        jobScheduler.schedule(jobInfo.build());
     }
 }
