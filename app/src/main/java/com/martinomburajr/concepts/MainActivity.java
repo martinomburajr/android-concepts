@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.martinomburajr.concepts.backgroundtasks.alarmmanager.AlarmManagerActivity;
+import com.martinomburajr.concepts.backgroundtasks.jobscheduler.JobSchedulerActivity;
 import com.martinomburajr.concepts.notifications.NotificationActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -85,10 +87,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_notifications) {
             launchNotifications();
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_alarm_manager) {
+            launchAlarmManager();
+        } else if (id == R.id.nav_job_scheduler) {
+            launchJobScheduler();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -100,6 +102,16 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void launchJobScheduler() {
+        Intent intent = new Intent(this, JobSchedulerActivity.class);
+        startActivity(intent);
+    }
+
+    private void launchAlarmManager() {
+        Intent intent = new Intent(this, AlarmManagerActivity.class);
+        startActivity(intent);
     }
 
     private void launchNotifications() {

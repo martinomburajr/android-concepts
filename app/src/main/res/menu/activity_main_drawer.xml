@@ -9,13 +9,13 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Notifications" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_alarm_manager"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Alarm Manager" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_job_scheduler"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Job Scheduler" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

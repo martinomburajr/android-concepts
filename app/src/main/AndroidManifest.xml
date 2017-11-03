@@ -20,6 +20,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".backgroundtasks.alarmmanager.AlarmManagerActivity" />
+
+        <receiver
+            android:name=".backgroundtasks.alarmmanager.receivers.AlarmManagerReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".backgroundtasks.jobscheduler.receiver.MyJobSchedulerReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".backgroundtasks.jobscheduler.JobSchedulerService"
+            android:label="jobschedulerservice"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+
+        <activity android:name=".backgroundtasks.jobscheduler.JobSchedulerActivity"></activity>
     </application>
 
 </manifest>
