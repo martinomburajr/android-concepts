@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import com.martinomburajr.concepts.backgroundtasks.jobscheduler.service.JobSchedulerOnChargedService;
+import com.martinomburajr.concepts.backgroundtasks.jobscheduler.service.JobSchedulerService;
 
 /**
  * Created by User on 11/3/2017.
@@ -20,7 +21,8 @@ public class JobSchedulerTutorial {
         JobInfo.Builder builder = new JobInfo.Builder(0,serviceComponent);
         builder.setMinimumLatency(3 * 1000);
         builder.setOverrideDeadline(15 * 1000);
-        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
+
+
         JobScheduler jobScheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         jobScheduler.schedule(builder.build());
     }
@@ -31,6 +33,7 @@ public class JobSchedulerTutorial {
         ComponentName serviceComponent = new ComponentName(context, JobSchedulerOnChargedService.class);
         JobInfo.Builder jobInfo = new JobInfo.Builder(jobid,serviceComponent);
         jobInfo.setRequiresCharging(true);
+        jobInfo.setPeriodic(14000);
 
         JobScheduler jobScheduler = (JobScheduler)context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         jobScheduler.schedule(jobInfo.build());

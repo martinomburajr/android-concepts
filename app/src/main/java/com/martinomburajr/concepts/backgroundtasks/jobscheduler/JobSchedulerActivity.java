@@ -21,6 +21,7 @@ public class JobSchedulerActivity extends AppCompatActivity {
         JobSchedulerTutorial.scheduleNotificationEvery30s(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void showNotification30sAfterCharge(View view) {
         JobSchedulerTutorial.scheduleNotificationOnPowerPluggedIn(this);
     }

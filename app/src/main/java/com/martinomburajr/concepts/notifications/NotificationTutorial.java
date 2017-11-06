@@ -285,4 +285,35 @@ public class NotificationTutorial {
     public void deleteComplexNotificationWTimer(){
 
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void createNotificationO(Context context, String title, String text) {
+        String notificationChannelName = "notifChannelName";
+        String notificationChannelId = "notifChannelId";
+        int notificationId = 1234;
+        NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel notificationChannel = new NotificationChannel(notificationChannelId, notificationChannelName, NotificationManager.IMPORTANCE_DEFAULT);
+
+        NotificationCompat.Builder notif = new NotificationCompat.Builder(context, notificationChannelId);
+        notif.setContentText(text)
+                .setContentTitle(title)
+                .setSmallIcon(R.drawable.ic_menu_manage)
+                .setVibrate(new long[]{100,200,50,50});
+
+        notificationManager.createNotificationChannel(notificationChannel);
+        notificationManager.notify(notificationId,notif.build());
+    }
+
+    public void createNotification(Context context, String title, String text) {
+        int notificationId = 1234;
+        NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        NotificationCompat.Builder notif = new NotificationCompat.Builder(context);
+        notif.setContentText(text)
+                .setContentTitle(title)
+                .setSmallIcon(R.drawable.ic_menu_manage)
+                .setVibrate(new long[]{100,200,50,50});
+
+        notificationManager.notify(notificationId,notif.build());
+    }
 }

@@ -26,35 +26,36 @@
             android:name=".backgroundtasks.alarmmanager.receivers.AlarmManagerReceiver"
             android:enabled="true"
             android:exported="true" />
-
-        <receiver android:name=".backgroundtasks.jobscheduler.receiver.MyJobSchedulerReceiver"
+        <receiver
+            android:name=".backgroundtasks.jobscheduler.receiver.MyJobSchedulerReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
-        <receiver android:name=".backgroundtasks.jobscheduler.receiver.JobSchedulerOnChargedReceiver"
+        <receiver
+            android:name=".backgroundtasks.jobscheduler.receiver.JobSchedulerOnChargedReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action."/>
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action." />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name=".backgroundtasks.jobscheduler.JobSchedulerService"
+            android:name=".backgroundtasks.jobscheduler.service.JobSchedulerService"
             android:label="jobschedulerservice"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
-
-        <service android:name=".backgroundtasks.jobscheduler.service.JobSchedulerOnChargedService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".backgroundtasks.jobscheduler.service.JobSchedulerOnChargedService"
             android:label="JobSchedulerOnChargedService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".backgroundtasks.jobscheduler.JobSchedulerActivity"></activity>
+        <activity android:name=".backgroundtasks.jobscheduler.JobSchedulerActivity" />
+        <activity android:name=".threading.runnable.RunnableActivity"></activity>
     </application>
 
 </manifest>

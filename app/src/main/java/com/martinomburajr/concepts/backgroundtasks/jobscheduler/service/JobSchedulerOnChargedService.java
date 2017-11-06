@@ -5,6 +5,7 @@ import android.app.job.JobService;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.martinomburajr.concepts.notifications.NotificationTutorial;
 
@@ -21,19 +22,21 @@ import io.reactivex.schedulers.Schedulers;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class JobSchedulerOnChargedService extends JobService {
-    private static final String TAG = "JobSchedulerOnChargedService";
+    private static final String TAG = "JobOnChargedService";
 
     @Override
     public boolean onStartJob(JobParameters params) {
-        Observable.timer(30000, TimeUnit.MILLISECONDS)
+        Observable.timer(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.computation())
                 .observeOn(Schedulers.io())
                 .map(var -> {
                     NotificationTutorial notificationTutorial = new NotificationTutorial(this);
+                    String title = "JobScheduler: OnCharge Job";
+                    String text = "The scheduled onCharge job has been completed";
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        notificationTutorial.notificationWIntentsO();
+                        notificationTutorial.createNotificationO(this, title,text);
                     }else{
-                        notificationTutorial.notificationWIntents();
+                        notificationTutorial.createNotification(this, title,text);
                     }
                     return var;
                 })
@@ -66,6 +69,7 @@ public class JobSchedulerOnChargedService extends JobService {
 
     @Override
     public boolean onStopJob(JobParameters params) {
-        return false;
+        Toast.makeText(this, "Could not perform onCharge job", Toast.LENGTH_LONG);
+        return true;
     }
 }

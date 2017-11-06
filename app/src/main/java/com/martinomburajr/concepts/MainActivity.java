@@ -17,6 +17,7 @@ import android.view.View;
 import com.martinomburajr.concepts.backgroundtasks.alarmmanager.AlarmManagerActivity;
 import com.martinomburajr.concepts.backgroundtasks.jobscheduler.JobSchedulerActivity;
 import com.martinomburajr.concepts.notifications.NotificationActivity;
+import com.martinomburajr.concepts.threading.runnable.RunnableActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -91,12 +92,8 @@ public class MainActivity extends AppCompatActivity
             launchAlarmManager();
         } else if (id == R.id.nav_job_scheduler) {
             launchJobScheduler();
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_runnable) {
+            launchRunnable();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,6 +113,11 @@ public class MainActivity extends AppCompatActivity
 
     private void launchNotifications() {
         Intent intent = new Intent(this, NotificationActivity.class);
+        startActivity(intent);
+    }
+
+    private void launchRunnable() {
+        Intent intent = new Intent(this, RunnableActivity.class);
         startActivity(intent);
     }
 }

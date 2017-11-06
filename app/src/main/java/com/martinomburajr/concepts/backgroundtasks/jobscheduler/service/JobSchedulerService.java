@@ -1,4 +1,4 @@
-package com.martinomburajr.concepts.backgroundtasks.jobscheduler;
+package com.martinomburajr.concepts.backgroundtasks.jobscheduler.service;
 
 import android.app.NotificationManager;
 import android.app.job.JobParameters;

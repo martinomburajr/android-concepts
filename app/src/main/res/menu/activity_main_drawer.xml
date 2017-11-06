@@ -4,34 +4,30 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_notifications"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Notifications" />
-        <item
-            android:id="@+id/nav_alarm_manager"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Alarm Manager" />
-        <item
-            android:id="@+id/nav_job_scheduler"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Job Scheduler" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+        <item android:title="Background Tasks">
+            <menu>
+                <item
+                    android:id="@+id/nav_notifications"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Notifications" />
+                <item
+                    android:id="@+id/nav_alarm_manager"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Alarm Manager" />
+                <item
+                    android:id="@+id/nav_job_scheduler"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Job Scheduler" />
+            </menu>
+        </item>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Multithreading">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_runnable"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Runnable" />
         </menu>
     </item>
 
