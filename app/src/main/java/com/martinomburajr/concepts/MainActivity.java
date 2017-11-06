@@ -17,6 +17,7 @@ import android.view.View;
 import com.martinomburajr.concepts.backgroundtasks.alarmmanager.AlarmManagerActivity;
 import com.martinomburajr.concepts.backgroundtasks.jobscheduler.JobSchedulerActivity;
 import com.martinomburajr.concepts.notifications.NotificationActivity;
+import com.martinomburajr.concepts.threading.loaders.asynctaskloader.AsyncTaskLoaderActivity;
 import com.martinomburajr.concepts.threading.runnable.RunnableActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -94,11 +95,18 @@ public class MainActivity extends AppCompatActivity
             launchJobScheduler();
         } else if (id == R.id.nav_runnable) {
             launchRunnable();
+        }else if (id == R.id.nav_async_task_loader) {
+            launchAsyncTaskLoader();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void launchAsyncTaskLoader() {
+        Intent intent = new Intent(this, AsyncTaskLoaderActivity.class);
+        startActivity(intent);
     }
 
     private void launchJobScheduler() {

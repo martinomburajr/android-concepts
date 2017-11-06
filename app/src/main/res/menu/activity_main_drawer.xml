@@ -28,6 +28,11 @@
                 android:id="@+id/nav_runnable"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Runnable" />
+            <item
+                android:id="@+id/nav_async_task_loader"
+                android:icon="@drawable/ic_menu_share"
+                android:title="AsyncTaskLoader" />
+
         </menu>
     </item>
 

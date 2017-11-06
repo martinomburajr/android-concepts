@@ -55,7 +55,8 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".backgroundtasks.jobscheduler.JobSchedulerActivity" />
-        <activity android:name=".threading.runnable.RunnableActivity"></activity>
+        <activity android:name=".threading.runnable.RunnableActivity" />
+        <activity android:name=".threading.loaders.asynctaskloader.AsyncTaskLoaderActivity"></activity>
     </application>
 
 </manifest>
